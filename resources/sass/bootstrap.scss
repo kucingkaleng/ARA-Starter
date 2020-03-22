@@ -1,0 +1,27 @@
+@import "~bootstrap/scss/functions";
+@import "~bootstrap/scss/variables";
+@import "~bootstrap/scss/mixins";
+@import "~bootstrap/scss/utilities";
+
+$theme-colors: (
+  "primary": #6187FE,
+  "dark": #111111
+);
+
+$enable-rounded: true;
+
+@import "~bootstrap/scss/bootstrap";
+
+input,
+textarea,
+select {
+  outline: none;
+  box-shadow: none !important;
+  border: 1px solid #ccc !important;
+}
+
+.dropdown .dropdown-menu{animation-name: example; animation-duration: .5s;}
+@keyframes example {
+    from {opacity:.2}
+    to {opacity:1;}
+}

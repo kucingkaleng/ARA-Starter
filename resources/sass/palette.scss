@@ -1,0 +1,9 @@
+/* RGB */
+$primary: #6187FE;
+$fontDark: #292929;
+$dark: #111111;
+$white: #FFFFFF;
+
+@function colorAlpha($RGBColor, $opacityLevel) {
+  @return rgba($RGBColor, $opacityLevel);
+}

@@ -1,0 +1,258 @@
+@import "./palette.scss";
+@import "./breakpoints.scss";
+
+body {
+  background-color: rgb(221, 221, 221);
+  // background-attachment: fixed;
+  background-repeat: no-repeat;
+  height: 100vh;
+}
+
+.cssIcon,
+.cssIcon:before,
+.cssIcon:after,
+.cssIcon i,
+.cssIcon i:before,
+.cssIcon i:after {
+  margin: 0 !important;
+  transition: all 0.4s ease;
+}
+
+main {
+  display: flex;
+  transition: .4s;
+  
+  .mainFooter {
+    margin-top: 5rem;
+    font-weight: 600;
+    font-size: 10pt;
+    text-align: right;
+  }
+}
+
+.mainLeft {
+  display: flex;
+
+  .sidebarMini {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    width: 70px;
+    height: 100vh;
+    background-color: #21D4FD;
+    background-image: linear-gradient(19deg, #21D4FD 0%, #B721FF 100%);
+
+    @include sm {
+      flex-direction: row;
+      position: fixed;
+      bottom: 0;
+      z-index: 1000;
+      width: 100%;
+      height: 70px;
+    }
+
+    .top {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      text-align: center;
+
+      @include sm {
+        display: none;
+      }
+
+      .icon {
+        font-size: 2rem;
+        color: $white;
+      }
+    }
+
+    .center {
+      .sidebar-items {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+
+        @include sm {
+          height: 100%;
+          flex-direction: row;
+          justify-content: center;
+          align-items: center;
+        }
+
+        .icon {
+          color: $white;
+          font-size: 1.2rem;
+          padding: .5rem 1rem;
+          margin: .5rem 0;
+
+          @include sm {
+            margin: 0 1rem;
+          }
+
+          &.active {
+            background-color: colorAlpha($dark, .4);
+            border-radius: .2rem;
+          }
+        }
+      }
+    }
+
+    .bottom {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      img {
+        width: 40px;
+        border-radius: 50%;
+        margin: 1rem;
+      }
+    }
+  }
+
+  .sidebarChild {
+    height: 100vh;
+    padding: 1rem 0;
+    transition: .4s;
+
+    &.hide {
+      height: 0;
+      width: 0;
+      opacity: 0;
+    }
+
+    @include sm {
+      display: none;
+    }
+
+    .sidebar-items {
+      display: flex;
+      flex-direction: column;
+
+      .title {
+        font-weight: bold;
+        font-size: 12pt;
+        color: colorAlpha($dark, .4);
+        margin-left: 1.2rem;
+        margin-top: 2rem;
+      }
+
+      .sidebar-item {
+        display: flex;
+        align-items: center;
+        margin-bottom: 1rem;
+        color: colorAlpha($dark, .5);
+        font-size: 12pt;
+
+        .icon {
+          margin: 0 1.2rem;
+        }
+        .text {
+          font-weight: 600;
+        }
+
+        &:hover {
+          text-decoration: none;
+          color: $fontDark;
+        }
+        &.active {
+          color: $fontDark;
+        }
+      }
+    }
+  }
+}
+
+.mainRight {
+  height: 100vh;
+  overflow-y: auto;
+  transition: .4s;
+}
+
+.navbar {
+  .navbar-brand {
+    font-weight: bold;
+    color: $white;
+    img {
+      width: 70px;
+    }
+  }
+  .btn-group {
+    button {
+      font-weight: bold;
+    }
+  }
+  
+  .navbar-toggler {
+    border: none;
+  }
+
+  .navbar-nav {
+    margin-left: auto;
+    .nav-item {
+      font-weight: bold;
+      color: colorAlpha($fontDark, .8);
+      &:hover {
+        color: $fontDark;
+      }
+      &.active {
+        color: $fontDark;
+      }
+    }
+  }
+}
+
+.card.card-dashboard-widget {
+  position: relative;
+  padding: 2rem 1rem;
+
+  &:hover {
+    cursor: pointer;
+    
+    .card-icon {
+      font-size: 70px;
+    }
+  }
+
+  .card-title {
+    font-size: 18pt;
+    font-weight: bold;
+    margin: 0;
+  }
+
+  .card-text {
+    font-size: 16pt;
+  }
+
+  .card-icon {
+    position: absolute;
+    bottom: 0;
+    right: 10px;
+    font-size: 60px;
+    opacity: .7;
+    transition: .4s;
+  }
+}
+
+
+// Fixing
+.react-calendar__tile--active {
+  background-color: #21D4FD;
+  background: linear-gradient(19deg, #21D4FD 0%, #B721FF 100%);
+}
+
+.cursor-pointer {
+  cursor: pointer;
+}
+
+.list-group-item {
+  transition: .4s;
+}
+.listtree-slide {
+  height: 0;
+  padding: 0;
+  margin: 0;
+  border: 1px solid rgba(0, 0, 0, 0);
+}
